@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2DDB2F4E-82FE-45D5-B2A8-934C6F5DBAEB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AppName.cbproj">
+            <Dependencies>Components\Components.cbproj</Dependencies>
+        </Projects>
+        <Projects Include="Components\Components.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AppName" DependsOnTargets="Components">
+        <MSBuild Projects="AppName.cbproj"/>
+    </Target>
+    <Target Name="AppName:Clean" DependsOnTargets="Components:Clean">
+        <MSBuild Projects="AppName.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AppName:Make" DependsOnTargets="Components:Make">
+        <MSBuild Projects="AppName.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Components">
+        <MSBuild Projects="Components\Components.cbproj"/>
+    </Target>
+    <Target Name="Components:Clean">
+        <MSBuild Projects="Components\Components.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Components:Make">
+        <MSBuild Projects="Components\Components.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AppName;Components"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AppName:Clean;Components:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AppName:Make;Components:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
