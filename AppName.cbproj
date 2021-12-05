@@ -117,8 +117,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
-        <VerInfo_Build>326</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=Your Company Name;FileDescription=$(MSBuildProjectName);FileVersion=1.1.0.326;InternalName=;LegalCopyright=Your Name (c) 2021;LegalTrademarks=;OriginalFilename=;ProgramID=com.yourcompany.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>328</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Your Company Name;FileDescription=$(MSBuildProjectName);FileVersion=1.1.0.328;InternalName=;LegalCopyright=Your Name (c) 2021;LegalTrademarks=;OriginalFilename=;ProgramID=com.yourcompany.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Release>0</VerInfo_Release>
         <AppExecutionLevel>requireAdministrator</AppExecutionLevel>
@@ -147,10 +147,6 @@
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="AppVerInfo.cpp">
-            <DependentOn>AppVerInfo.h</DependentOn>
-            <BuildOrder>14</BuildOrder>
-        </CppCompile>
         <None Include="Constants.h">
             <BuildOrder>19</BuildOrder>
         </None>
@@ -177,6 +173,10 @@
         <None Include="Utils\AppSettings.h">
             <BuildOrder>23</BuildOrder>
         </None>
+        <CppCompile Include="Utils\AppVerInfo.cpp">
+            <DependentOn>Utils\AppVerInfo.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
         <None Include="Utils\QueryPerformance.h">
             <BuildOrder>25</BuildOrder>
         </None>

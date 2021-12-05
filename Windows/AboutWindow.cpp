@@ -4,7 +4,7 @@
 #pragma hdrstop
 
 #include "AboutWindow.h"
-#include "../AppVerInfo.h"
+#include "../Utils/AppVerInfo.h"
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
