@@ -12,7 +12,13 @@ unsigned int GetBits(unsigned int val, int offset, int n) {
 }
 
 unsigned int MakePciAddress(int bus, int device, int function, int offset) {
-    return 0x80000000 | bus << 16 | device << 11 | function << 8 | offset;
+    return 0x80000000 | ((bus & 0xff) << 16) | ((device & 0x1f) << 11) | ((function & 0x4) << 8) | (offset & 0xff);
+}
+
+unsigned int MakePciAddressEx(int bus, int device, int function, int offset) {
+    unsigned int hi = (offset >> 8) & 0xf;
+    unsigned int lo = offset & 0xff;
+    return 0x80000000 | (hi << 24) | ((bus & 0xff) << 16) | ((device & 0x1f) << 11) | ((function & 0x4) << 8) | lo;
 }
 
 unsigned int ReadPciReg(unsigned int pciDev) {

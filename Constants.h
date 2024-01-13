@@ -46,6 +46,6 @@
 /* CPUID function 0x80000001, ebx */
 #define CPUID_PKGTYPE_MASK            GENMASK(31, 28)
 
-#define PCI_ADDR_PORT                 0xCF8
-#define PCI_DATA_PORT                 0xCFC
+#define PCI_ADDR_PORT                 0x0CF8
+#define PCI_DATA_PORT                 0x0CFC
 #define COUNT_OF(array) (sizeof(array) / sizeof(array[0]))
