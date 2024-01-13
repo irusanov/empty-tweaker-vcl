@@ -6,8 +6,8 @@ object MainForm: TMainForm
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'AppName'
-  ClientHeight = 471
-  ClientWidth = 382
+  ClientHeight = 470
+  ClientWidth = 378
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -514,18 +514,16 @@ object MainForm: TMainForm
     410000AC410000AC410000AC410000AC410000AC410000AC410000AC410000AC
     410000AC410000AC410000AC410000AC41}
   Menu = MainMenu1
-  OldCreateOrder = False
   Position = poDefault
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  PixelsPerInch = 96
   TextHeight = 13
   object TabControl1: TTabControl
     AlignWithMargins = True
     Left = 2
     Top = 2
-    Width = 378
+    Width = 374
     Height = 435
     Margins.Left = 2
     Margins.Top = 2
@@ -551,10 +549,11 @@ object MainForm: TMainForm
     TabIndex = 0
     OnChange = TabControl1Change
     OnDrawTab = TabControl1DrawTab
+    ExplicitWidth = 370
     object PanelDram: TPanel
       Left = 4
       Top = 24
-      Width = 370
+      Width = 366
       Height = 407
       Margins.Left = 0
       Margins.Top = 0
@@ -569,11 +568,12 @@ object MainForm: TMainForm
       ParentCtl3D = False
       ParentDoubleBuffered = False
       TabOrder = 2
+      ExplicitWidth = 362
     end
     object PanelChipset: TPanel
       Left = 4
       Top = 24
-      Width = 370
+      Width = 366
       Height = 407
       Margins.Left = 0
       Margins.Top = 0
@@ -589,11 +589,12 @@ object MainForm: TMainForm
       ParentDoubleBuffered = False
       TabOrder = 0
       Visible = False
+      ExplicitWidth = 362
     end
     object PanelInfo: TPanel
       Left = 4
       Top = 24
-      Width = 370
+      Width = 366
       Height = 407
       Margins.Left = 0
       Margins.Top = 0
@@ -609,29 +610,31 @@ object MainForm: TMainForm
       ParentDoubleBuffered = False
       TabOrder = 1
       Visible = False
+      ExplicitWidth = 362
     end
   end
   object Panel1: TPanel
     Left = 0
     Top = 439
-    Width = 382
+    Width = 378
     Height = 34
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 1
+    ExplicitWidth = 374
     object ButtonRefresh: TButton
-      Left = 224
+      Left = 216
       Top = 3
-      Width = 75
+      Width = 77
       Height = 25
       Caption = 'Refresh'
       TabOrder = 0
       OnClick = ButtonRefreshClick
     end
     object ButtonApply: TButton
-      Left = 304
+      Left = 297
       Top = 3
-      Width = 75
+      Width = 79
       Height = 25
       Caption = 'Apply'
       Default = True
